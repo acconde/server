@@ -2,7 +2,6 @@ const router = require('express').Router();
 const Notification = require('../../models/Notification');
 const User = require('../../models/User');
 const auth = require('../auth');
-const {sendNotification} = require('../../config/notification');
 
 const create = async (req, res, next) => {
   try {
