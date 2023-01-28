@@ -1,12 +1,13 @@
 const AWS = require("aws-sdk");
 const fs = require("fs");
 const path = require("path");
-const {AWS_ACCESS_KEY, AWS_REGION, AWS_SECRET_KEY, BUCKET} = require('./index');
+const {AWS_ACCESS_KEY, AWS_SECRET_KEY, AWS_REGION, BUCKET} = require('./index');
 
 AWS.config.update({
   accessKeyId: AWS_ACCESS_KEY,
   secretAccessKey: AWS_SECRET_KEY,
-  region: AWS_REGION
+  region: AWS_REGION,
+  bucket: BUCKET,
 });
 
 const s3 = new AWS.S3();

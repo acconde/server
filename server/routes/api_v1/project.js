@@ -7,7 +7,8 @@ const auth = require('../auth');
 const {getNotNullFields} = require('../../utils');
 const {upload, getImageName} = require('../../config/storage');
 const {ErrorHandler} = require('../../config/error');
-const s3 = require('../../config/s3');
+const s3 = require('../../config/s3').default;
+const {sendNotification} = require('../../config/notification');
 
 const create = async (req, res, next) => {
   try {
