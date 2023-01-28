@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Note = require('../../models/Note').default;
+const Note = require('../../models/Note');
 const auth = require('../auth');
 
 const create = async (req, res, next) => {

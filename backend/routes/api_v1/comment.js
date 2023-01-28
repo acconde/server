@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const Task = require('../../models/Task').default;
-const Comment = require('../../models/Comment').default;
-const Attachment = require('../../models/Attachment').default;
+const Task = require('../../models/Task');
+const Comment = require('../../models/Comment');
+const Attachment = require('../../models/Attachment');
 const auth = require('../auth');
 const {getNotNullFields, getFileName} = require('../../utils');
 const {upload, getImageName} = require('../../config/storage');

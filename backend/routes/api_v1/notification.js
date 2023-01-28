@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const Notification = require('../../models/Notification').default;
-const User = require('../../models/User').default;
+const Notification = require('../../models/Notification');
+const User = require('../../models/User');
 const auth = require('../auth');
 const {sendNotification} = require('../../config/notification');
 

@@ -1,9 +1,9 @@
-import { use } from 'passport';
-import { Strategy as LocalStrategy } from 'passport-local';
-import Users from '../models/User';
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const Users = require('../models/User');
 
 /*************************** Local Strategy ***************************/
-use(new LocalStrategy({
+passport.use(new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
 }, (email, password, done) => {

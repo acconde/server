@@ -1,10 +1,10 @@
-import { Schema, Types, model } from "mongoose";
+const mongoose = require("mongoose");
 
-const TodoSchema = new Schema({
+const TodoSchema = new mongoose.Schema({
   text: String,
   checked: Boolean,
-  user: {type: Types.ObjectId, ref: 'User'},
-  project: {type: Types.ObjectId, ref: 'Project'}
+  user: {type: mongoose.Types.ObjectId, ref: 'User'},
+  project: {type: mongoose.Types.ObjectId, ref: 'Project'}
 });
 
-export default model('Todo', TodoSchema);
+module.exports = mongoose.model('Todo', TodoSchema);
