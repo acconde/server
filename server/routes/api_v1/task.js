@@ -6,7 +6,7 @@ const Comment = require('../../models/Comment');
 const Todo = require('../../models/Todo');
 const auth = require('../auth');
 const {getNotNullFields, getFileName} = require('../../utils');
-const {upload, getImageName} = require('../../config/storage');
+const {upload, getImageName} = require('../../config');
 const s3 = require('../../config/s3');
 const mongoose = require('mongoose');
 
