@@ -33,7 +33,7 @@ const DashboardLayout = () => {
       <div className="menu-space"/>
       <div className="side-menu">
         <Row align="middle" className="logoContainer" onClick={() => navigate('/dashboard')}>
-          <img src={require('../../images/logo.svg').default} alt="" className="logo"/>
+          <img src={require('../../images/logo.svg').default} alt="logo" className="logo"/>
           <span className="logoTxt">AGCS</span>
         </Row>
         <div className="menu">

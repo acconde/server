@@ -32,7 +32,7 @@ const Login = () => {
       </Col>
       <Col md={12}>
         <div className="right">
-          <img src={require('../../images/login.svg').default} alt=""/>
+          <img src={require('../../images/loginlogo.svg').default} alt="login"/>
         </div>
       </Col>
     </Row>
