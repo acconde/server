@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const Conversation = require('../../models/Conversation');
-const Message = require('../../models/Message');
-const User = require('../../models/User');
+const Conversation = require('../../models/Conversation').default;
+const Message = require('../../models/Message').default;
+const User = require('../../models/User').default;
 const auth = require('../auth');
 const {ErrorHandler} = require('../../config/error');
 const {upload, getImageName} = require('../../config/storage');

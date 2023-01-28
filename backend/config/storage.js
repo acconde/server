@@ -1,17 +1,17 @@
-const path = require('path');
-const multer = require('multer');
-const mime = require('mime-types');
+import path from 'path';
+import multer, { diskStorage } from 'multer';
+import { extension } from 'mime-types';
 
-const storage = multer.diskStorage({
+const storage = diskStorage({
   destination: function (req, file, cb) {cb(null, 'public');},
   filename: async function (req, file, cb) {
     cb(null, file.originalname);
   }
 });
 
-exports.upload = multer({storage});
+export const upload = multer({storage});
 
-exports.getImageName = (file, name) => (name || getRandomString()) + '.' + mime.extension(file.mimetype);
+export function getImageName(file, name) { return (name || getRandomString()) + '.' + extension(file.mimetype); }
 
 function getRandomString(length = 20) {
   const randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

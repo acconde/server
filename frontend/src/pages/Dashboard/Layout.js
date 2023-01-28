@@ -19,7 +19,7 @@ const DashboardLayout = () => {
     const token = localStorage.getItem('token');
     axios.setToken(token);
     dispatch(getUser())
-  }, []);
+  }, [dispatch]);
 
   const pIndex = React.useMemo(() => {
     const p = location.pathname;

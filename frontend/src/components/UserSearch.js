@@ -8,7 +8,7 @@ const UserSearch = ({onSelect, value, onChange, task, projectMembers, addedItems
   const addedMembers = useSelector(s => s.project.project.data.members.filter(m => m.role !== 3).map(m => m.user));
   const contacts = useSelector(s => s.auth.user.data.contacts);
 
-  const memberIds = React.useMemo(() => (task ? addedItems : addedMembers).map(m => m._id), [addedItems, addedMembers]);
+  const memberIds = React.useMemo(() => (task ? addedItems : addedMembers).map(m => m._id), [addedItems, addedMembers, task]);
 
   const search = React.useCallback(text => {
     setSearchText(text);
@@ -22,7 +22,7 @@ const UserSearch = ({onSelect, value, onChange, task, projectMembers, addedItems
           })
       );
     }
-  }, [memberIds, projectMembers]);
+  }, [addedMembers, contacts, memberIds, task]);
 
   return (
     <AutoComplete

@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const socket = require('./config/socket');
+const socket = require('./config/socket').default;
 
 const app = express();
 
@@ -24,7 +24,7 @@ mongoose.connect(mongoUri, {
   useUnifiedTopology: true
 });
 
-require('./models/User');
+require('./models/User').default;
 require("./config/passport");
 app.use(require("./routes"));
 

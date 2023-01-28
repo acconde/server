@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const Project = require('../../models/Project');
-const Task = require('../../models/Task');
-const Attachment = require('../../models/Attachment');
-const Comment = require('../../models/Comment');
-const Todo = require('../../models/Todo');
+const Project = require('../../models/Project').default;
+const Task = require('../../models/Task').default;
+const Attachment = require('../../models/Attachment').default;
+const Comment = require('../../models/Comment').default;
+const Todo = require('../../models/Todo').default;
 const auth = require('../auth');
 const {getNotNullFields, getFileName} = require('../../utils');
 const {upload, getImageName} = require('../../config/storage');

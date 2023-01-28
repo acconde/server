@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Todo = require('../../models/Todo');
+const Todo = require('../../models/Todo').default;
 const auth = require('../auth');
 const {getNotNullFields} = require('../../utils');
 

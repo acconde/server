@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const Project = require('../../models/Project');
-const User = require('../../models/User');
-const Invitation = require('../../models/Invitation');
-const Notification = require('../../models/Notification');
+const Project = require('../../models/Project').default;
+const User = require('../../models/User').default;
+const Invitation = require('../../models/Invitation').default;
+const Notification = require('../../models/Notification').default;
 const auth = require('../auth');
 const {getNotNullFields} = require('../../utils');
 const {upload, getImageName} = require('../../config/storage');

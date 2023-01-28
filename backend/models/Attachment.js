@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+import { Schema, model } from "mongoose";
 
-const AttachmentSchema = new mongoose.Schema({
+const AttachmentSchema = new Schema({
   createdAt: {type: Date, default: Date.now},
   name: String,
   src: String,
@@ -8,4 +8,4 @@ const AttachmentSchema = new mongoose.Schema({
   size: Number
 });
 
-module.exports = mongoose.model('Attachment', AttachmentSchema);
+export default model('Attachment', AttachmentSchema);

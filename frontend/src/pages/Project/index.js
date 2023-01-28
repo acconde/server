@@ -23,26 +23,26 @@ const Project = () => {
     dispatch(getNotes(id));
     dispatch(getTodo(id));
     dispatch(getProjectHistory(id));
-  }, [id]);
+  }, [dispatch, id]);
 
   const addNote = React.useCallback(() => {
     if (!notes.creating) dispatch(createNote({_id: getTemptId(), text: 'New note', project: id}));
-  }, [id, notes.creating]);
+  }, [dispatch, id, notes.creating]);
   const updateNoteItem = React.useCallback((id, val) => {
     dispatch(updateNote({...notes.data.find(t => t._id === id), ...val}))
-  }, [notes.data]);
+  }, [dispatch, notes.data]);
 
   const addTodo = React.useCallback(() => {
     if (!todo.creating) dispatch(createTodo({_id: getTemptId(), text: 'New todo', project: id}));
-  }, [id, todo.creating]);
+  }, [dispatch, id, todo.creating]);
   const updateTodoItem = React.useCallback((n, id, val) => {
     dispatch(updateTodo({...todo.data.find(t => t._id === id), ...val}))
-  }, [todo.data]);
+  }, [dispatch, todo.data]);
 
   const NotesTitle = React.useMemo(() => <Row align="middle cardTitle">Notes <div onClick={addNote}>
-    <Icon name="plus-circle"/></div></Row>, [id, notes.creating]);
+    <Icon name="plus-circle"/></div></Row>, [addNote]);
   const TodoTitle = React.useMemo(() => <Row align="middle cardTitle">Todo <div onClick={addTodo}>
-    <Icon name="plus-circle"/></div></Row>, [id, todo.creating]);
+    <Icon name="plus-circle"/></div></Row>, [addTodo]);
 
   const statistics = React.useMemo(() => getStatistics(tasks.filter(t => !t.archived)), [tasks]);
 

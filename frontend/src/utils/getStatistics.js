@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default function (tasks) {
   const total = tasks.length;
   const todoSize = tasks.filter(t => t.board == 1).length;

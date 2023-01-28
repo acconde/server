@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
+import { Schema, model } from "mongoose";
 
-const NotificationSchema = new mongoose.Schema({
+const NotificationSchema = new Schema({
   title: String,
   seen: Boolean,
   createdAt: {type: Date, default: Date.now}
 });
 
-module.exports = mongoose.model('Notification', NotificationSchema);
+export default model('Notification', NotificationSchema);

@@ -14,7 +14,7 @@ const Login = () => {
 
   const loginFunc = React.useCallback(() => {
     dispatch(login({email, password, navigate}))
-  }, [email, password]);
+  }, [dispatch, email, navigate, password]);
 
   return (
     <Row style={{height: window.innerHeight}} className="loginContainer">

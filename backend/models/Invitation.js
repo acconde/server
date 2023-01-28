@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+import { Schema, Types, model } from "mongoose";
 
-const InvitationSchema = new mongoose.Schema({
-  user: {type: mongoose.Types.ObjectId, ref: 'User'},
-  project: {type: mongoose.Types.ObjectId, ref: 'Project'},
+const InvitationSchema = new Schema({
+  user: {type: Types.ObjectId, ref: 'User'},
+  project: {type: Types.ObjectId, ref: 'Project'},
 });
 
-module.exports = mongoose.model('Invitation', InvitationSchema);
+export default model('Invitation', InvitationSchema);

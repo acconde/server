@@ -17,7 +17,7 @@ const Settings = () => {
 
   React.useEffect(() => {
     dispatch(getInvitations());
-  }, []);
+  }, [dispatch]);
 
   React.useEffect(() => {
     setFirstName(user.data.firstName);
@@ -31,11 +31,11 @@ const Settings = () => {
     const formData = new FormData();
     formData.append('avatar', val);
     dispatch(updateUserAvatar({preview, formData}));
-  }, []);
+  }, [dispatch]);
 
   const updateData = React.useCallback(() => {
     dispatch(updateUser({firstName, lastName}))
-  }, [firstName, lastName]);
+  }, [dispatch, firstName, lastName]);
 
   return (
     <div>

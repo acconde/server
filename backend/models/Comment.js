@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
+import { Schema, Types, model } from "mongoose";
 
-const CommentSchema = new mongoose.Schema({
+const CommentSchema = new Schema({
   content: String,
-  user: {type: mongoose.Types.ObjectId, ref: 'User'},
-  attachments: {type: [{type: mongoose.Types.ObjectId, ref: 'Attachment'}], default: undefined},
+  user: {type: Types.ObjectId, ref: 'User'},
+  attachments: {type: [{type: Types.ObjectId, ref: 'Attachment'}], default: undefined},
   createdAt: {type: Date, default: Date.now}
 });
 
-module.exports = mongoose.model('Comment', CommentSchema);
+export default model('Comment', CommentSchema);
