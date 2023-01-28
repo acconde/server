@@ -7,7 +7,7 @@ const Todo = require('../../models/Todo');
 const auth = require('../auth');
 const {getNotNullFields, getFileName} = require('../../utils');
 const {upload, getImageName} = require('../../config/storage');
-let s3 = require('../../config/s3');
+const s3 = require('../../config/s3');
 const mongoose = require('mongoose');
 
 const create = async (req, res, next) => {
@@ -212,4 +212,4 @@ router.delete("/:id/todo/:todo", auth.required, deleteTodo);
 router.delete("/:id/file/:file", auth.required, removeAttachment);
 router.put("/delete/tasks", auth.required, remove);
 
-module.exports = router; 
+module.exports = router;

@@ -8,5 +8,6 @@ router.use("/todo", require("./todo"));
 router.use("/project", require("./project"));
 router.use("/task", require("./task"));
 router.use("/comment", require("./comment"));
+router.use("/notification", require("./notification"));
 
 module.exports = router;
