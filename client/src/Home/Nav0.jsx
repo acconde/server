@@ -1,7 +1,7 @@
 import React from 'react';
 import TweenOne from 'rc-tween-one';
 import { Menu } from 'antd';
-import { getitemsToRender } from './utils';
+import { getChildrenToRender } from './utils';
 
 const { Item, SubMenu } = Menu;
 
@@ -23,9 +23,9 @@ class Header extends React.Component {
   render() {
     const { dataSource, isMobile, ...props } = this.props;
     const { phoneOpen } = this.state;
-    const navData = dataSource.Menu.items;
-    const navitems = navData.map((item) => {
-      const { items: a, subItem, ...itemProps } = item;
+    const navData = dataSource.Menu.children;
+    const navChildren = navData.map((item) => {
+      const { children: a, subItem, ...itemProps } = item;
       if (subItem) {
         return (
           <SubMenu
@@ -36,20 +36,20 @@ class Header extends React.Component {
                 {...a}
                 className={`header0-item-block ${a.className}`.trim()}
               >
-                {a.items.map(getitemsToRender)}
+                {a.children.map(getChildrenToRender)}
               </div>
             }
             popupClassName="header0-item-child"
           >
             {subItem.map(($item, ii) => {
-              const { items: childItem } = $item;
+              const { children: childItem } = $item;
               const child = childItem.href ? (
                 <a {...childItem}>
-                  {childItem.items.map(getitemsToRender)}
+                  {childItem.children.map(getChildrenToRender)}
                 </a>
               ) : (
                 <div {...childItem}>
-                  {childItem.items.map(getitemsToRender)}
+                  {childItem.children.map(getChildrenToRender)}
                 </div>
               );
               return (
@@ -64,7 +64,7 @@ class Header extends React.Component {
       return (
         <Item key={item.name} {...itemProps}>
           <a {...a} className={`header0-item-block ${a.className}`.trim()}>
-            {a.items.map(getitemsToRender)}
+            {a.children.map(getChildrenToRender)}
           </a>
         </Item>
       );
@@ -85,7 +85,7 @@ class Header extends React.Component {
             animation={{ x: -30, type: 'from', ease: 'easeOutQuad' }}
             {...dataSource.logo}
           >
-            <img width="100%" src={dataSource.logo.items} alt="img" />
+            <img width="100%" src={dataSource.logo.children} alt="img" />
           </TweenOne>
           {isMobile && (
             <div
@@ -123,7 +123,7 @@ class Header extends React.Component {
               defaultSelectedKeys={['sub0']}
               theme="dark"
             >
-              {navitems}
+              {navChildren}
             </Menu>
           </TweenOne>
         </div>

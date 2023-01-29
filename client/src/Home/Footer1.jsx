@@ -3,7 +3,7 @@ import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import { Row, Col } from 'antd';
-import { getitemsToRender } from './utils';
+import { getChildrenToRender } from './utils';
 import { isImg } from './utils';
 
 class Footer extends React.Component {
@@ -11,21 +11,21 @@ class Footer extends React.Component {
     className: 'footer1',
   };
 
-  getLiitems = (data) =>
+  getLiChildren = (data) =>
     data.map((item, i) => {
       const { title, childWrapper, ...itemProps } = item;
       return (
         <Col key={i.toString()} {...itemProps} title={null} content={null}>
           <h2 {...title}>
-            {typeof title.items === 'string' &&
-            title.items.match(isImg) ? (
-              <img src={title.items} width="100%" alt="img" />
+            {typeof title.children === 'string' &&
+            title.children.match(isImg) ? (
+              <img src={title.children} width="100%" alt="img" />
             ) : (
-              title.items
+              title.children
             )}
           </h2>
           <div {...childWrapper}>
-            {childWrapper.items.map(getitemsToRender)}
+            {childWrapper.children.map(getChildrenToRender)}
           </div>
         </Col>
       );
@@ -36,7 +36,7 @@ class Footer extends React.Component {
     const { dataSource } = props;
     delete props.dataSource;
     delete props.isMobile;
-    const itemsToRender = this.getLiitems(dataSource.block.items);
+    const childrenToRender = this.getLiChildren(dataSource.block.children);
     return (
       <div {...props} {...dataSource.wrapper}>
         <OverPack {...dataSource.OverPack}>
@@ -47,7 +47,7 @@ class Footer extends React.Component {
             component={Row}
             {...dataSource.block}
           >
-            {itemsToRender}
+            {childrenToRender}
           </QueueAnim>
           <TweenOne
             animation={{ y: '+=30', opacity: 0, type: 'from' }}
@@ -56,7 +56,7 @@ class Footer extends React.Component {
           >
             <div {...dataSource.copyrightPage}>
               <div {...dataSource.copyright}>
-                {dataSource.copyright.items}
+                {dataSource.copyright.children}
               </div>
             </div>
           </TweenOne>
