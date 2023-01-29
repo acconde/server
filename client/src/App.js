@@ -10,18 +10,21 @@ import DashboardLayout from "./pages/Dashboard/Layout";
 import ProjectLayout from "./pages/Project/Layout";
 import {useSelector} from "react-redux";
 import cx from 'classnames';
+import Home from '../src/Home';
 
 ConfigProvider.config({theme: {primaryColor: '#3498DB'}});
+
 
 function App() {
   const darkMode = useSelector(s => s.auth.mode === 'dark');
   const auth = useSelector(s => s.auth);
 
+
   return (
     <div className={cx('app', {dark: darkMode})} style={{minHeight: window.innerHeight}}>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Navigate to="/login"/>}/>
+        <Route element={<Home/>} index/>
           <Route path="/login" element={!auth.isLogin ? <Login/> : <Navigate to="/dashboard"/>}/>
           <Route path="/signup" element={!auth.isLogin ? <SignUp/> : <Navigate to="/dashboard"/>}/>
           {auth.isLogin ?
@@ -42,7 +45,7 @@ function App() {
               </Route>
             </React.Fragment>
             :
-            <Route path="*" element={<Navigate to="/login"/>}/>
+            <Route path="*" element={<Navigate to="/home"/>}/>
           }
         </Routes>
       </BrowserRouter>

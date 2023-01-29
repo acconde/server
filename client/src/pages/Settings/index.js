@@ -40,7 +40,7 @@ const Settings = () => {
   return (
     <div>
       <div className="heading">
-        <h1>AGCS</h1>
+        <h1>AGCS IT Solutions</h1>
         <h4>Settings</h4>
       </div>
       <Row gutter={20}>

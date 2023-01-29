@@ -5,7 +5,7 @@ const Messages = () => {
   return (
     <div>
       <div className="heading">
-        <h1>AGCS</h1>
+        <h1>AGCS IT Solutions</h1>
         <h4>Messages</h4>
       </div>
       <Chat/>

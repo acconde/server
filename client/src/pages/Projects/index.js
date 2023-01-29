@@ -29,7 +29,7 @@ const Projects = () => {
   return (
     <div className="projects">
       <div className="heading">
-        <h1>AGCS</h1>
+        <h1>AGCS IT Solutions</h1>
         <h4>Projects</h4>
       </div>
       <Select value={filterType} onChange={setFilterType} options={optsList} className="filterSelect"/>

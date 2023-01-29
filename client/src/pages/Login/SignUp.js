@@ -5,11 +5,13 @@ import {Row, Col} from "antd";
 import {Button, Input} from "../../components";
 import {Link, useNavigate} from "react-router-dom";
 import {validateEmail} from "../../utils/helpers";
+import {validatePassword} from "../../utils/helpers";
 import {toast} from "react-toastify";
 
 const SignUp = () => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [cpassword, confirmPassword] = React.useState('');
   const [firstName, setFirstName] = React.useState('');
   const [lastName, setLastName] = React.useState('');
   const loading = useSelector(s => s.auth.user.loading);
@@ -31,7 +33,8 @@ const SignUp = () => {
             <Input placeholder="First Name" value={firstName} onChange={setFirstName}/>
             <Input placeholder="Last Name" value={lastName} onChange={setLastName}/>
             <Input placeholder="Email" value={email} onChange={setEmail}/>
-            <Input placeholder="Password" value={password} onChange={setPassword} type="password"/>
+            <Input placeholder="Password" value={password} onChange={setPassword} type="password" aria-required="true"/>
+            <Input placeholder="Confirm Password" value={password} onChange={setPassword} type="password" aria-required="true"/>
             <Button title="Sign Up" onClick={registerFunc} disabled={loading}/>
             <p>Do you have an account? <Link to="/login">Sign In</Link></p>
           </div>
@@ -39,7 +42,7 @@ const SignUp = () => {
       </Col>
       <Col md={12}>
         <div className="right">
-          <img src={require('../../images/login.svg').default} alt=""/>
+          <img src={require('../../images/loginlogo.svg').default} alt=""/>
         </div>
       </Col>
     </Row>

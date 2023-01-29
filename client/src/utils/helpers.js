@@ -2,6 +2,7 @@ import _ from 'lodash';
 import {moment} from "./moment";
 import React from "react";
 import {constants} from "../config";
+import Password from 'antd/lib/input/Password';
 
 export function getAvatar(path) {
   if (path) return path;
