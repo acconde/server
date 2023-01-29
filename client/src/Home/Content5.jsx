@@ -2,18 +2,18 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import { TweenOneGroup } from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import { getChildrenToRender } from './utils';
+import { getitemsToRender } from './utils';
 
 class Content5 extends React.PureComponent {
-  getChildrenToRender = (data) =>
+  getitemsToRender = (data) =>
     data.map((item) => {
       return (
         <Col key={item.name} {...item}>
-          <a {...item.children.wrapper}>
-            <span {...item.children.img}>
-              <img src={item.children.img.children} height="100%" alt="img" />
+          <a {...item.items.wrapper}>
+            <span {...item.items.img}>
+              <img src={item.items.img.items} height="100%" alt="img" />
             </span>
-            <p {...item.children.content}>{item.children.content.children}</p>
+            <p {...item.items.content}>{item.items.content.items}</p>
           </a>
         </Col>
       );
@@ -24,14 +24,14 @@ class Content5 extends React.PureComponent {
     const { dataSource } = props;
     delete props.dataSource;
     delete props.isMobile;
-    const childrenToRender = this.getChildrenToRender(
-      dataSource.block.children
+    const itemsToRender = this.getitemsToRender(
+      dataSource.block.items
     );
     return (
       <div {...props} {...dataSource.wrapper}>
         <div {...dataSource.page}>
           <div key="title" {...dataSource.titleWrapper}>
-            {dataSource.titleWrapper.children.map(getChildrenToRender)}
+            {dataSource.titleWrapper.items.map(getitemsToRender)}
           </div>
           <OverPack
             className={`content-template ${props.className}`}
@@ -49,7 +49,7 @@ class Content5 extends React.PureComponent {
               leave={{ y: '+=30', opacity: 0, ease: 'easeInOutQuad' }}
               {...dataSource.block}
             >
-              {childrenToRender}
+              {itemsToRender}
             </TweenOneGroup>
           </OverPack>
         </div>

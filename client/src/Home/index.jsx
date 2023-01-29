@@ -55,7 +55,7 @@ export default class Home extends React.Component {
   }
 
   render() {
-    const children = [
+    const items = [
       <Nav0
         id="Nav0_0"
         key="Nav0_0"
@@ -100,9 +100,9 @@ export default class Home extends React.Component {
           this.dom = d;
         }}
       >
-        {/* 如果不是 dva 2.0 替换成 {children} start */}
-        {this.state.show && children}
-        {/* 如果不是 dva 2.0 替换成 {children} end */}
+        {/* 如果不是 dva 2.0 替换成 {items} start */}
+        {this.state.show && items}
+        {/* 如果不是 dva 2.0 替换成 {items} end */}
       </div>
     );
   }
