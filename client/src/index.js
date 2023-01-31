@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// import AppHome from './Apphome';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import configureStore from "./utils/store";
@@ -7,12 +8,16 @@ import {Provider} from "react-redux";
 import history from "./utils/history";
 
 
+
+
 const store = configureStore({}, history);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.Fragment>
+    
     <Provider store={store}>
       <App />
+      {/* <AppHome /> */}
     </Provider>
   </React.Fragment>
 );

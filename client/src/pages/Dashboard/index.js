@@ -7,6 +7,7 @@ import {TodoItem} from "../Project/subpages/TaskModal/TodoSection";
 import {getTemptId} from "../../utils/helpers";
 import NoteItem from "../../components/NoteItem";
 import {createNote, createTodo, deleteNote, deleteTodo, getNotes, getProjects, getTodo, updateNote, updateTodo} from "./actions";
+import { Footer } from 'antd/lib/layout/layout';
 
 const Dashboard = () => {
   const todo = useSelector(s => s.dashboard.todo);
@@ -113,8 +114,17 @@ const Dashboard = () => {
             : <Col xs={24}><Card empty/></Col>
         }
       </Row>
+
+      {/* <Footer>
+    <p>Copyright © 2013-2018 by Alexis Graphix and Computer Data System. All rights reserved.</p>
+    </Footer> */}
     </div>
+
+
+    
   )
 };
+
+
 
 export default Dashboard;

@@ -3,6 +3,8 @@ import {ConfigProvider} from "antd";
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-circular-progressbar/dist/styles.css';
 import "./scss/index.scss";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import "./home/App.css";
 import {ToastContainer} from 'react-toastify';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import {Login, Dashboard, Messages, ProjectBoard, Project, Projects, Settings, SignUp, ProjectCalendar, ProjectMessages, ProjectSettings} from './pages';
@@ -10,7 +12,9 @@ import DashboardLayout from "./pages/Dashboard/Layout";
 import ProjectLayout from "./pages/Project/Layout";
 import {useSelector} from "react-redux";
 import cx from 'classnames';
-import Home from '../src/Home';
+
+// import Home from './home'
+// import { AppHeader, AppHero, AppAbout, AppServices, AppTrackrepairstatus, AppTestimonials, AppContact, AppFooter} from './Home';
 
 ConfigProvider.config({theme: {primaryColor: '#3498DB'}});
 
@@ -24,7 +28,7 @@ function App() {
     <div className={cx('app', {dark: darkMode})} style={{minHeight: window.innerHeight}}>
       <BrowserRouter>
         <Routes>
-        <Route element={<Home/>} index/>
+        {/* <Route path="home" element={<Home/>}/> */}
           <Route path="/login" element={!auth.isLogin ? <Login/> : <Navigate to="/dashboard"/>}/>
           <Route path="/signup" element={!auth.isLogin ? <SignUp/> : <Navigate to="/dashboard"/>}/>
           {auth.isLogin ?
@@ -45,7 +49,7 @@ function App() {
               </Route>
             </React.Fragment>
             :
-            <Route path="*" element={<Navigate to="/home"/>}/>
+            <Route path="*" element={<Navigate to="/login"/>}/>
           }
         </Routes>
       </BrowserRouter>
@@ -55,3 +59,5 @@ function App() {
 }
 
 export default App;
+
+

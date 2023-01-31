@@ -1,4 +1,4 @@
-//@import '~antd/dist/antd.css';
+@import '~antd/dist/antd.css';
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700&display=swap');
 @import '~antd/dist/antd.variable.min.css';
 @import '~antd/dist/antd.variable.min.css';
@@ -7,6 +7,8 @@
 
 .app {
   background-color: $bg;
+  background: rgb(218,218,218);
+  background: linear-gradient(128deg, rgb(230, 230, 230) 0%, rgba(56,155,219,0.7091430322128851) 50%, rgba(227,227,227,1) 100%);
   font-family: 'Nunito Sans', sans-serif;
   color: $txt;
 }
@@ -14,7 +16,7 @@
 .logo {
   cursor: pointer;
   border-radius: 40px;
-}
+} 
 
 .side-menu {
   background-color: rgb(255, 255, 255);
@@ -1318,3 +1320,4 @@ h4 {
 
 @import 'responsive';
 @import 'dark';
+

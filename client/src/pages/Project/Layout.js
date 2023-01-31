@@ -11,6 +11,7 @@ import axios from "../../config/axios";
 import {getUser} from "../Login/actions";
 import {getProjects} from "../Dashboard/actions";
 
+
 const ProjectLayout = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -78,7 +79,22 @@ const ProjectLayout = () => {
         </div>
       </div>
     </Row>
-  )
-};
 
+  
+  )
+}
+
+
+ 
+// Chat API 
+// var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/6349f74b54f06e12d89a4297/1gfces0gl';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  // Chat API
 export default ProjectLayout;
