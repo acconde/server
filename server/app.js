@@ -44,7 +44,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const port = process.env.PORT || 80000;
+const port = process.env.PORT || 60000;
 const server = app.listen(port, () => {console.log(`listening on *:${port}`);});
 socket(server);
 
