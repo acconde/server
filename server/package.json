@@ -25,6 +25,7 @@
     "onesignal-node": "3.3.0",
     "passport": "0.5.2",
     "passport-local": "1.0.0",
-    "socket.io": "4.4.1"
+    "socket.io": "4.4.1",
+    "vercel-sapper": "^0.44.0"
   }
 }
