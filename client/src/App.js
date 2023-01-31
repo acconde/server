@@ -28,7 +28,7 @@ function App() {
     <div className={cx('app', {dark: darkMode})} style={{minHeight: window.innerHeight}}>
       <BrowserRouter>
         <Routes>
-        {/* <Route path="home" element={<Home/>}/> */}
+        <Route index element={<Navigate to="/login"/>}/>
           <Route path="/login" element={!auth.isLogin ? <Login/> : <Navigate to="/dashboard"/>}/>
           <Route path="/signup" element={!auth.isLogin ? <SignUp/> : <Navigate to="/dashboard"/>}/>
           {auth.isLogin ?
